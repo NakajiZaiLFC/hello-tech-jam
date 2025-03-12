@@ -88,3 +88,25 @@
   --chart-4: hsl(280 65% 60%);
   --chart-5: hsl(340 75% 55%);
 }
+
+.user-bubble {
+	@apply relative bg-orange-300 rounded p-2;
+}
+
+.user-bubble::after {
+	content: "";
+	@apply absolute border-[8px] border-transparent border-l-orange-300;
+	left: 100%;
+	top: 10px;
+}
+
+.bot-bubble {
+	@apply relative bg-gray-300 rounded p-2;
+}
+
+.bot-bubble::before {
+	content: "";
+	@apply absolute border-[8px] border-transparent border-r-gray-300;
+	right: 100%;
+	top: 10px;
+}
