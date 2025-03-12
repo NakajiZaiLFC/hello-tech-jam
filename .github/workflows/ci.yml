@@ -5,19 +5,27 @@ on:
     branches:
       - main
   pull_request:
+    types: [opened, synchronize]
     branches:
       - main
+      - 'feat/*'
+      - 'feature/*'
 
 jobs:
   build-and-lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -25,20 +33,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          package_json_file: package.json
-
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
-      - name: Run ESLint
-        run: pnpm lint
+      - name: Run Lint
+        run: pnpm run lint
 
       - name: Build Next.js
-        run: pnpm build
+        run: pnpm run build
 
       - name: Verify TypeScript configuration
         run: pnpm tsc --noEmit
