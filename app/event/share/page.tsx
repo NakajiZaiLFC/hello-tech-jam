@@ -1,7 +1,3 @@
-
-import Layout from '@/components/Layout'  // 追記
-
-
 export default function Home() {
     return (
       <div className="flex justify-center items-center h-screen bg-stone-50">
