@@ -30,6 +30,10 @@ export default function Home() {
 const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z\s]+$/;
 const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   const value = e.target.value;
+  if (value.length >= 20) {
+    alert("20文字以上の入力は許可されません");
+    return;
+  }
   if (value === "" || allowedRegex.test(value)) {
     setTitle(value);
   } else {
