@@ -46,17 +46,17 @@ export const questions: Question[] = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     text: "参加人数は？",
     options: ["5名以下", "6～15名", "16名以上"],
   },
   {
-    id: 6,
+    id: 5,
     text: "お席のご希望は？",
     options: ["個室", "テーブル席", "カジュアル", "特になし"],
   },
   {
-    id: 7,
+    id: 6,
     text: "その他ご要望は？",
     options: ["なし", "その他"],
   },
