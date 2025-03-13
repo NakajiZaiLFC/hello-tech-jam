@@ -36,7 +36,7 @@ export default function Home() {
     <div className="flex justify-center items-center min-h-screen bg-stone-50">
   <main className="min-h-screen bg-gray-100 p-4 mt-16">
     <div className="max-w-3xl mx-auto bg-white rounded shadow p-4">
-      <div className="text-black font-semibold mb-2">チャットボット（選択式）</div>
+      <div className="text-gray-950 font-semibold mb-2">チャットボット（選択式）</div>
 
         {/* チャット履歴エリア：min-h-[2rem] により最初から1行分の高さを確保 */}
         <div className="border border-gray-200 p-2 min-h-[600px] mb-4">
@@ -48,7 +48,7 @@ export default function Home() {
               }`}
             >
               <div
-                className={` text-black ${
+                className={` text-gray-950 ${
                   msg.sender === "user"
 					? "user-bubble" 
 					: "bot-bubble"
@@ -68,7 +68,7 @@ export default function Home() {
                 <button
                   key={idx}
                   onClick={() => handleOptionClick(option)}
-                  className="bg-orange-300 hover:bg-orange-400 text-black py-1 px-3 rounded"
+                  className="bg-orange-300 hover:bg-orange-400 text-gray-950 py-1 px-3 rounded"
                 >
                   {option}
                 </button>

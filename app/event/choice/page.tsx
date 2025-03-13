@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex justify-center items-center h-screen bg-stone-50">
       <div className="text-center">
-        <a href="#" className="text-black text-2xl no-underline">
+        <a href="#" className="text-gray-950 text-2xl no-underline">
           店舗取捨選択ページ
         </a>
         <div className="mt-5">

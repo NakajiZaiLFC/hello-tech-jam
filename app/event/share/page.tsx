@@ -21,12 +21,12 @@ function ShareContent() {
   return (
     <div className="flex justify-center items-center h-screen bg-stone-50">
       <div className="text-center">
-        <p className="text-black text-2xl">圧縮: {urlParam || "リンクがありません"}</p>
-        <p className="text-black text-2xl">URL: {originalUrl || "リンクがありません"}</p>
-        <p className="text-black text-2xl">Name: {name}</p>
-        <p className="text-black text-2xl">Tel: {tel}</p>
-        <p className="text-black text-2xl">Lat: {lat}</p>
-        <p className="text-black text-2xl">Lng: {lng}</p>
+        <p className="text-gray-950 text-2xl">圧縮: {urlParam || "リンクがありません"}</p>
+        <p className="text-gray-950 text-2xl">URL: {originalUrl || "リンクがありません"}</p>
+        <p className="text-gray-950 text-2xl">Name: {name}</p>
+        <p className="text-gray-950 text-2xl">Tel: {tel}</p>
+        <p className="text-gray-950 text-2xl">Lat: {lat}</p>
+        <p className="text-gray-950 text-2xl">Lng: {lng}</p>
       </div>
     </div>
   );

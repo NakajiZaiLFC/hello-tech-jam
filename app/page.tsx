@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-stone-50">
-      <div className="bg-white p-6 rounded shadow-lg text-center text-black">
+      <div className="bg-white p-6 rounded shadow-lg text-center text-gray-950">
         <h1 className="text-2xl font-bold mb-6">イベント作成ページ</h1>
 
         {/* イベント名の入力欄 */}
@@ -30,7 +30,7 @@ export default function Home() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="イベント名を入力"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-black"
+            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
           />
         </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             placeholder="20250312 など"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-black"
+            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
           />
         </div>
 
@@ -58,7 +58,7 @@ export default function Home() {
             id="prefecture"
             value={prefecture}
             onChange={(e) => setPrefecture(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-black"
+            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
           >
             <option value="">選択してください</option>
             <option value="東京都">東京都</option>
@@ -77,7 +77,7 @@ export default function Home() {
             id="city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-black"
+            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
           >
             <option value="">選択してください</option>
             <option value="千代田区">千代田区</option>
@@ -98,7 +98,7 @@ export default function Home() {
             },
           }}
         >
-          <button className="px-4 py-2 text-lg font-semibold bg-blue-500 text-black rounded hover:bg-blue-600">
+          <button className="px-4 py-2 text-lg font-semibold bg-blue-500 text-gray-950 rounded hover:bg-blue-600">
             次へ
           </button>
         </Link>
