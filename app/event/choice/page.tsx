@@ -44,10 +44,10 @@
 
 import Link from "next/link";
 import LZString from "lz-string";
-import { title } from "process";
+
 
 const DEFAULT_SHOP_NAME = "和風亭";
-const DEFAULT_TITLE = "比嘉さん誕生日会";// 2021/12/31 01:30
+const DEFAULT_TITLE = "比嘉さん誕生日会";
 const DEFAULT_DATE = "202112310130";// 2021/12/31 01:30
 const DEFAULT_TEL = "08012345678";
 const DEFAULT_LAT = 35.669220;
