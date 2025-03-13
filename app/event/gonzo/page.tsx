@@ -112,7 +112,7 @@ function HomeContent() {
                 {msg.sender === "bot" && (
                   <Avatar className="w-16 h-16">
                     <AvatarImage src="/images/ganko_oyaji.png" />
-                    <AvatarFallback>CN</AvatarFallback>
+                    <AvatarFallback>GZ</AvatarFallback>
                   </Avatar>
                 )}
                 <div
