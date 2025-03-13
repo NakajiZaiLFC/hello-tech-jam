@@ -16,39 +16,34 @@ import {
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 
-import prefCityData from "@/public/pref_city.json";
-
-// JSONの各都道府県の型定義
-interface PrefCity {
-  id: string;
-  name: string;
-  short: string;
-  kana: string;
-  en: string;
-  city: {
-    citycode: string;
-    city: string;
-  }[];
-}
-
-type PrefCityObject = Record<string, PrefCity>;
+import prefCityData from "@/public/pref_city.json"; 
 
 export default function Home() {
   const [title, setTitle] = useState("");
   const [prefecture, setPrefecture] = useState("");
   const [city, setCity] = useState("");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
-  const prefCityObject = prefCityData[0] as PrefCityObject;
-  const prefectureList = Object.keys(prefCityObject).map((code) => {
-    const data = prefCityObject[code as keyof typeof prefCityObject];
-    return {
-      code,
-      name: data.name,
-      cityList: data.city.map((c) => c.city),
-    };
-  });
-  
 
+  // JSONは配列形式で、その先頭要素が都道府県をまとめたオブジェクトを持っている想定
+  const prefCityObject = prefCityData[0];
+
+  // Object.entriesで取り出した後、キー（id）の昇順でソートしてからマッピングする
+  const prefectureList = Object.entries(prefCityObject)
+    .sort(([codeA], [codeB]) => codeA.localeCompare(codeB))
+    .map(([code, data]) => {
+      // data の中身: { id: "01", name: "北海道", short: "北海道", city: [ { citycode: "...", city: "..." }, ... ] }
+      const { name, city: cityArray } = data as {
+        name: string;
+        city: { citycode: string; city: string }[];
+      };
+      return {
+        code,
+        name,
+        cityList: cityArray.map((c) => c.city),
+      };
+    });
+
+  // 選択された都道府県コード(prefecture)に合致する市町村リストを取得
   const selectedPrefectureData = prefectureList.find(
     (item) => item.code === prefecture
   );
@@ -61,6 +56,7 @@ export default function Home() {
   const queryDate = selectedDate ? format(selectedDate, "yyyyMMdd") : "";
   const queryArea = city.trim() ? city : "";
 
+  // ひらがな、カタカナ、漢字、英語（大文字・小文字）、および空白を許可する正規表現
   const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z\s]+$/;
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
