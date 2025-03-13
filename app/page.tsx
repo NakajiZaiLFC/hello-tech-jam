@@ -23,6 +23,7 @@ export default function Home() {
   const [prefecture, setPrefecture] = useState("");
   const [city, setCity] = useState("");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [selectedTime, setSelectedTime] = useState(""); // 新しく時間を管理
 
   // JSONは配列形式で、その先頭要素が都道府県をまとめたオブジェクトを持っている想定
   const prefCityObject = prefCityData[0];
@@ -49,11 +50,20 @@ export default function Home() {
   );
   const cityOptions = selectedPrefectureData?.cityList || [];
 
+  // 全ての入力が揃っていないときはボタンをdisabledにする
   const isDisabled =
-    !title.trim() || !selectedDate || !prefecture.trim() || !city.trim();
+    !title.trim() || !selectedDate || !selectedTime || !prefecture.trim() || !city.trim();
 
+  // クエリとして渡す値：日付と時間を結合（12桁: yyyyMMddHHmm）
+  let queryDate = "";
+  if (selectedDate && selectedTime) {
+    const [hour, minute] = selectedTime.split(":").map(Number);
+    const combinedDate = new Date(selectedDate);
+    combinedDate.setHours(hour, minute);
+    queryDate = format(combinedDate, "yyyyMMddHHmm");
+  }
+  
   const queryTitle = title.trim() ? title : "";
-  const queryDate = selectedDate ? format(selectedDate, "yyyyMMdd") : "";
   const queryArea = city.trim() ? city : "";
 
   // ひらがな、カタカナ、漢字、英語（大文字・小文字）、および空白を許可する正規表現
@@ -74,24 +84,35 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-stone-50 text-stone-950 px-4">
-      <div className="w-full max-w-md space-y-6">
-        <div className="mt-20">
+      <div className="w-full max-w-md space-y-4">
+        {/* 余白を削減: mt-20 → mt-8 または不要なら削除 */}
+        <div className="mt-8">
           <label className="block text-sm font-semibold mb-1">イベント名</label>
           <Input placeholder="お誕生日会" value={title} onChange={handleTitleChange} />
         </div>
 
         <div className="flex space-x-4">
-          <div>
-            <label className="block text-sm font-semibold mb-2">開催日程</label>
-            <Calendar
-              mode="single"
-              selected={selectedDate}
-              onSelect={setSelectedDate}
-            />
+          <div className="flex flex-col space-y-4">
+            <div>
+              <label className="block text-sm font-semibold mb-2">開催日程</label>
+              <Calendar
+                mode="single"
+                selected={selectedDate}
+                onSelect={setSelectedDate}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col space-y-4">
             {/* 都道府県のセレクト */}
+            <div>
+              <label className="block text-sm font-semibold mb-2">開催時間</label>
+              <Input 
+                type="time" 
+                value={selectedTime} 
+                onChange={(e) => setSelectedTime(e.target.value)} 
+              />
+            </div>
             <div>
               <label className="block text-sm font-semibold mb-1">都道府県</label>
               <Select
@@ -140,7 +161,7 @@ export default function Home() {
               pathname: "/event/gonzo",
               query: {
                 title: queryTitle,
-                date: queryDate,
+                date: queryDate, // 12桁のクエリに変更
                 area: queryArea,
               },
             }}
