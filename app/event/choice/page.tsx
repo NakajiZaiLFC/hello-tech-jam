@@ -1,8 +1,8 @@
 import Link from "next/link";
 import LZString from "lz-string";
 
-const DEFAULT_SHOP_NAME = '和風亭';
-const DEFAULT_TEL = '08012345678';
+const DEFAULT_SHOP_NAME = "和風亭";
+const DEFAULT_TEL = "08012345678";
 const DEFAULT_LAT = 35.669220;
 const DEFAULT_LNG = 139.761457;
 const DEFAULT_URL = "https://columbia.jp/artist-info/nonochan/";
