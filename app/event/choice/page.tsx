@@ -21,12 +21,11 @@ export default function Home() {
           店舗取捨選択ページ
         </a>
         <div className="mt-5">
-
-          <Link href={`/event/share?url=${compressedUrl}name=${name}tel=${tel}lat=${lat}lng=${lng}`}>
-            <button className="px-4 py-2 text-lg font-semibold bg-blue-500 text-white rounded">
-              シェアページへ
-            </button>
-          </Link>
+        <Link href={`/event/share?url=${compressedUrl}&name=${name}&tel=${tel}&lat=${lat}&lng=${lng}`}>
+          <button className="px-4 py-2 text-lg font-semibold bg-blue-500 text-white rounded">
+            シェアページへ
+          </button>
+        </Link>
         </div>
       </div>
     </div>

@@ -20,7 +20,10 @@ export default function Home() {
     <div className="flex justify-center items-center h-screen bg-stone-50">
       <div className="text-center">
         <p className="text-black text-2xl">
-         圧縮;{urlParam || "リンクがありません"} URL: {originalUrl || "リンクがありません"}
+         圧縮;{urlParam || "リンクがありません"} 
+        </p>
+        <p className="text-black text-2xl">
+         URL: {originalUrl || "リンクがありません"}
         </p>
         <p className="text-black text-2xl">Name: {name}</p>
         <p className="text-black text-2xl">Tel: {tel}</p>
