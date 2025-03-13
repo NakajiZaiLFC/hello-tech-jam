@@ -13,10 +13,10 @@ function ShareContent() {
     originalUrl = LZString.decompressFromEncodedURIComponent(urlParam);
   }
 
-  const name = searchParams.get("name") || "名前がありません";
-  const tel = searchParams.get("tel") || "電話番号がありません";
-  const lat = searchParams.get("lat") || "緯度がありません";
-  const lng = searchParams.get("lng") || "経度がありません";
+  const name = searchParams.get("name") || "名前なし";
+  const tel = searchParams.get("tel") || "電話番号なし";
+  const lat = searchParams.get("lat") || "緯度なし";
+  const lng = searchParams.get("lng") || "経度なし";
 
   return (
     <div className="flex justify-center items-center h-screen bg-stone-50">
