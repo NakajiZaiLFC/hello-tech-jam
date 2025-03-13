@@ -1,86 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-
-// 5つの質問を定義
-const questions = [
-	{
-	  id: 1,
-	  text: "会食のシーンはどれですか？",
-	  options: [
-		"仲間内",
-		"部署内",
-		"表彰祝い",
-		"異動祝い",
-		"社内接待",
-		"社外接待",
-		"忘年会",
-		"新年会",
-		"誕生日会"
-	  ],
-	},
-	{
-	  id: 2,
-	  text: "ご希望のお料理は？",
-	  options: [
-		"焼肉",
-		"中華",
-		"鍋",
-		"韓国料理",
-		"イタリアン",
-		"フレンチ",
-		"その他"
-	  ],
-	},
-	{
-	  id: 3,
-	  text: "ご予算は？",
-	  options: [
-		"3,000円未満",
-		"3,000～5,000円",
-		"5,000～8,000円",
-		"8,000円以上"
-	  ],
-	},
-	{
-	  id: 4,
-	  text: "開催時期は？",
-	  options: [
-		"今月中",
-		"来月",
-		"来季以降",
-		"未定"
-	  ],
-	},
-	{
-	  id: 5,
-	  text: "参加人数は？",
-	  options: [
-		"5名以下",
-		"6～15名",
-		"16名以上"
-	  ],
-	},
-	{
-	  id: 6,
-	  text: "お席のご希望は？",
-	  options: [
-		"個室",
-		"テーブル席",
-		"カジュアル",
-		"特になし"
-	  ],
-	},
-	{
-	  id: 7,
-	  text: "その他ご要望は？",
-	  options: [
-		"なし",
-		"その他"
-	  ],
-	},
-  ];
-  
+import { questions } from "@/constants/questions"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   // チャットのメッセージ履歴
@@ -147,15 +70,17 @@ export default function Home() {
             <div className="w-full sm:max-w-3xl mx-auto bg-white rounded shadow p-4 flex justify-center items-center">
 			<div className="mb-4">
 			  <div className="flex flex-wrap gap-2 justify-center">
-				{questions[currentQuestionIndex].options.map((option, idx) => (
-				  <button
+			  {questions.map((question) =>
+				question.options.map((option, idx) => (
+					<Button
 					key={idx}
 					onClick={() => handleOptionClick(option)}
-					className="shadow-md bg-orange-400 hover:bg-orange-200 text-white py-1 px-3 rounded"
-				  >
+					variant="outline"
+					>
 					{option}
-				  </button>
-				))}
+					</Button>
+				))
+				)}
 			  </div>
 			</div>
 		  </div>
