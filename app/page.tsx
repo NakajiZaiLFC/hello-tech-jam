@@ -2,92 +2,92 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { format } from "date-fns";
+
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 
 export default function Home() {
   const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
   const [prefecture, setPrefecture] = useState("");
   const [city, setCity] = useState("");
 
-  // 入力値が空文字の場合、trim()で空白除去した上でデフォルト値を設定する
+  // Calendarで選択した日付を保持
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+
+  // イベント名: 空文字の場合はデフォルト "aiueo"
   const queryTitle = title.trim() ? title : "aiueo";
-  const queryDate = date.trim() ? date : "20030801";
+
+  // 開催日程: 未選択の場合はデフォルト "20030801"
+  const queryDate = selectedDate ? format(selectedDate, "yyyyMMdd") : "20030801";
+
+  // 市町村: 空文字の場合はデフォルト "那覇市"
   const queryArea = city.trim() ? city : "那覇市";
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-stone-50">
-      <div className="bg-white p-6 rounded shadow-lg text-center text-gray-950">
-        <h1 className="text-2xl font-bold mb-6">イベント作成ページ</h1>
-
-        {/* イベント名の入力欄 */}
-        <div className="mb-4">
-          <label className="block mb-1 font-semibold" htmlFor="title">
-            イベント名
-          </label>
-          <input
-            id="title"
-            type="text"
+    <div className="flex flex-col items-center justify-center min-h-screen bg-stone-50 text-stone-950 px-4">
+      <div className="w-full max-w-md space-y-6">
+        {/* イベント名 */}
+        <div>
+          <label className="block text-sm font-semibold mb-1">イベント名</label>
+          <Input
+            placeholder="イベント名を入力"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="イベント名を入力"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
           />
         </div>
 
-        {/* 開催日程（YYYYMMDD形式） */}
-        <div className="mb-4">
-          <label className="block mb-1 font-semibold" htmlFor="date">
-            開催日程（YYYYMMDD）
-          </label>
-          <input
-            id="date"
-            type="text"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            placeholder="20250312 など"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
+        {/* 開催日程（Calendar） */}
+        <div>
+          <label className="block text-sm font-semibold mb-2">開催日程</label>
+          <Calendar
+            mode="single"
+            selected={selectedDate}
+            onSelect={setSelectedDate}
           />
         </div>
 
         {/* 都道府県ドロップダウン */}
-        <div className="mb-4">
-          <label className="block mb-1 font-semibold" htmlFor="prefecture">
-            都道府県
-          </label>
-          <select
-            id="prefecture"
-            value={prefecture}
-            onChange={(e) => setPrefecture(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
-          >
-            <option value="">選択してください</option>
-            <option value="東京都">東京都</option>
-            <option value="大阪府">大阪府</option>
-            <option value="沖縄県">沖縄県</option>
-            <option value="北海道">北海道</option>
-          </select>
+        <div>
+          <label className="block text-sm font-semibold mb-1">都道府県</label>
+          <Select value={prefecture} onValueChange={setPrefecture}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="選択してください" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="東京都">東京都</SelectItem>
+              <SelectItem value="大阪府">大阪府</SelectItem>
+              <SelectItem value="沖縄県">沖縄県</SelectItem>
+              <SelectItem value="北海道">北海道</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* 市町村ドロップダウン */}
-        <div className="mb-6">
-          <label className="block mb-1 font-semibold" htmlFor="city">
-            市町村
-          </label>
-          <select
-            id="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-gray-950"
-          >
-            <option value="">選択してください</option>
-            <option value="千代田区">千代田区</option>
-            <option value="那覇市">那覇市</option>
-            <option value="浪速区">浪速区</option>
-            <option value="札幌市">札幌市</option>
-          </select>
+        <div>
+          <label className="block text-sm font-semibold mb-1">市町村</label>
+          <Select value={city} onValueChange={setCity}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="選択してください" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="千代田区">千代田区</SelectItem>
+              <SelectItem value="那覇市">那覇市</SelectItem>
+              <SelectItem value="浪速区">浪速区</SelectItem>
+              <SelectItem value="札幌市">札幌市</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
-        {/* クエリパラメータとしてデフォルト値を適用 */}
+        {/* 次へボタン */}
         <Link
           href={{
             pathname: "/event/gonzo",
@@ -98,9 +98,7 @@ export default function Home() {
             },
           }}
         >
-          <button className="px-4 py-2 text-lg font-semibold bg-blue-500 text-gray-950 rounded hover:bg-blue-600">
-            次へ
-          </button>
+          <Button className="w-full">次へ</Button>
         </Link>
       </div>
     </div>
