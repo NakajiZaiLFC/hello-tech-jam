@@ -44,8 +44,11 @@
 
 import Link from "next/link";
 import LZString from "lz-string";
+import { title } from "process";
 
 const DEFAULT_SHOP_NAME = "和風亭";
+const DEFAULT_TITLE = "比嘉さん誕生日会";// 2021/12/31 01:30
+const DEFAULT_DATE = "202112310130";// 2021/12/31 01:30
 const DEFAULT_TEL = "08012345678";
 const DEFAULT_LAT = 35.669220;
 const DEFAULT_LNG = 139.761457;
@@ -58,7 +61,9 @@ export default function Home() {
     tel: DEFAULT_TEL,
     lat: DEFAULT_LAT,
     lng: DEFAULT_LNG,
-    url: DEFAULT_URL
+    url: DEFAULT_URL,
+    date: DEFAULT_DATE,
+    title: DEFAULT_TITLE,
   };
 
   const compressedUrl = LZString.compressToEncodedURIComponent(defaultParams.url);
@@ -71,7 +76,7 @@ export default function Home() {
         </a>
         <div className="mt-5">
           <Link
-            href={`/event/share?url=${compressedUrl}&name=${defaultParams.name}&tel=${defaultParams.tel}&lat=${defaultParams.lat}&lng=${defaultParams.lng}`}
+            href={`/event/share?url=${compressedUrl}&date=${defaultParams.date}&name=${defaultParams.name}&tel=${defaultParams.tel}&lat=${defaultParams.lat}&lng=${defaultParams.lng}&title=${defaultParams.title}`}
           >
             <button className="px-4 py-2 text-lg font-semibold bg-blue-500 text-white rounded">
               シェアページへ
