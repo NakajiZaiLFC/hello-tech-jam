@@ -173,19 +173,20 @@ function ChoiceDisplay() {
     fetchData();
   }, [proxyUrl]);
 
+  // shopDataは存在しなければ空配列とする
+  const shopData: Shop[] = fetchedData?.results?.shop ?? [];
+
   return (
     <div className="bg-white p-6 rounded shadow text-gray-950">
       {/* 3列グリッドで店舗カードを表示 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {error ? (
           <p className="text-red-500">エラー: {error}</p>
-        ) : fetchedData &&
-          fetchedData.results &&
-          Array.isArray(fetchedData.results.shop) ? (
-          fetchedData.results.shop.length === 0 ? (
+        ) : fetchedData ? (
+          shopData.length === 0 ? (
             <p>希望のお店は無いみたいだ</p>
           ) : (
-            fetchedData.results.shop.map((shop: Shop) => {
+            shopData.map((shop: Shop) => {
               return (
                 <div
                   key={shop.id}
