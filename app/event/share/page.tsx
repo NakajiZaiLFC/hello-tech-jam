@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Card, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { Send } from "@mynaui/icons-react";
 
 // Star の型定義
 type StarType = {
@@ -83,7 +84,7 @@ function ShareContent() {
         {title}!
       </h1>
 
-      <div className="mt-10 max-w-5xl w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
+      <div className="mt-10 mb-40 max-w-5xl w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
         {/* 画像エリア */}
         <div className="md:w-1/2 w-full flex justify-center items-center p-4">
           <Image
@@ -121,11 +122,13 @@ function ShareContent() {
           </p>
 
           <button
-            onClick={handleCopy}
-            className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg text-xl font-bold"
-          >
-            招待メッセージをコピー
-          </button>
+  onClick={handleCopy}
+  className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg text-xl font-bold flex items-center justify-center space-x-2"
+>
+  <span>招待メッセージをコピー</span>
+  <Send />
+</button>
+
 
           <Image
             src="/images/map.jpg"
