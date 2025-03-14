@@ -92,70 +92,71 @@ export default function Home() {
           <Input placeholder="お誕生日会" value={title} onChange={handleTitleChange} />
         </div>
 
-        <div className="flex space-x-4">
-          <div className="flex flex-col space-y-4">
-            <div>
-              <label className="block text-sm font-semibold mb-2">開催日程</label>
-              <Calendar
-                mode="single"
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-              />
-            </div>
-          </div>
+        <div className="flex flex-col md:flex-row gap-4">
+  <div className="flex flex-col space-y-4 w-full md:w-auto">
+    <div>
+      <label className="block text-sm font-semibold mb-2 ">開催日程</label>
+      <Calendar
+        mode="single"
+        selected={selectedDate}
+        onSelect={setSelectedDate}
+      />
+    </div>
+  </div>
 
-          <div className="flex flex-col space-y-4">
-            {/* 開催時間 */}
-            <div>
-              <label className="block text-sm font-semibold mb-2">開催時間</label>
-              <Input 
-                type="time" 
-                value={selectedTime} 
-                onChange={(e) => setSelectedTime(e.target.value)} 
-              />
-            </div>
-            {/* 都道府県 */}
-            <div>
-              <label className="block text-sm font-semibold mb-1">都道府県</label>
-              <Select
-                value={prefecture}
-                onValueChange={(value) => {
-                  setPrefecture(value);
-                  // 都道府県が変わったら市町村選択をリセット
-                  setCity("");
-                }}
-              >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="選択してください" />
-                </SelectTrigger>
-                <SelectContent>
-                  {prefectureList.map((pref) => (
-                    <SelectItem key={pref.code} value={pref.code}>
-                      {pref.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+  <div className="flex flex-col space-y-4 w-full md:w-auto">
+    {/* 開催時間 */}
+    <div>
+      <label className="block text-sm font-semibold mb-2">開催時間</label>
+      <Input 
+        type="time" 
+        value={selectedTime} 
+        onChange={(e) => setSelectedTime(e.target.value)} 
+      />
+    </div>
 
-            {/* 市町村 */}
-            <div>
-              <label className="block text-sm font-semibold mb-1">市町村</label>
-              <Select value={city} onValueChange={setCity}>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="選択してください" />
-                </SelectTrigger>
-                <SelectContent>
-                  {cityOptions.map((cityName) => (
-                    <SelectItem key={cityName} value={cityName}>
-                      {cityName}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </div>
+    {/* 都道府県 */}
+    <div>
+      <label className="block text-sm font-semibold mb-1">都道府県</label>
+      <Select
+        value={prefecture}
+        onValueChange={(value) => {
+          setPrefecture(value);
+          setCity("");
+        }}
+      >
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="選択してください" />
+        </SelectTrigger>
+        <SelectContent>
+          {prefectureList.map((pref) => (
+            <SelectItem key={pref.code} value={pref.code}>
+              {pref.name}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+
+    {/* 市町村 */}
+    <div>
+      <label className="block text-sm font-semibold mb-1">市町村</label>
+      <Select value={city} onValueChange={setCity}>
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="選択してください" />
+        </SelectTrigger>
+        <SelectContent>
+          {cityOptions.map((cityName) => (
+            <SelectItem key={cityName} value={cityName}>
+              {cityName}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+  </div>
+</div>
+
 
         <div className="flex justify-center">
           <Link
