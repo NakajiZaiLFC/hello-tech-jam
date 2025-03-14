@@ -179,60 +179,65 @@ function ChoiceDisplay() {
         {error ? (
           <p className="text-red-500">エラー: {error}</p>
         ) : fetchedData ? (
-          fetchedData.results.shop.map((shop: Shop) => {
-            // 遷移先 URL 用に shop.urls.pc を圧縮
-            return (
-              <div
-                key={shop.id}
-                className="p-4 border rounded cursor-default"
-              >
-                {/* 画像クリック時のみ確認ポップアップ */}
-                {shop.photo && shop.photo.pc && shop.photo.pc.l && (
-                  <img
-                    src={shop.photo.pc.l}
-                    alt={shop.name}
-                    className="w-full h-auto mb-2 cursor-pointer"
-                    onClick={() => {
-                      if (window.confirm("このお店にするのか？")) {
-                        /*
-                        ** こんな感じになる
-                        ** 送るクエリパラメータ
-                        ** title: 会食名
-                        ** date: 日時
-                        ** name: 店名
-                        ** address: 住所
-                        ** image: 画像URL
-                        */
-                        router.push(`/event/share?title=${title}&date=${dateParam}&name=${shop.name}&address=${shop.address}&image=${shop.photo && shop.photo.pc && shop.photo.pc.l}`);
-                      }
-                    }}
-                  />
-                )}
-                <h2 className="text-xl font-bold">{shop.name}</h2>
-                <p>
-                  <strong>住所:</strong> {shop.address}
-                </p>
-                <p>
-                  <strong>営業時間:</strong> {shop.open}
-                </p>
-                <p>
-                  <strong>キャッチ:</strong> {shop.catch}
-                </p>
-                {shop.urls && shop.urls.pc && (
+          fetchedData.results.shop.length === 0 ? (
+            <p>希望のお店は無いみたいだ</p>
+          ) : (
+            fetchedData.results.shop.map((shop: Shop) => {
+              return (
+                <div
+                  key={shop.id}
+                  className="p-4 border rounded cursor-default"
+                >
+                  {/* 画像クリック時のみ確認ポップアップ */}
+                  {shop.photo && shop.photo.pc && shop.photo.pc.l && (
+                    <img
+                      src={shop.photo.pc.l}
+                      alt={shop.name}
+                      className="w-full h-auto mb-2 cursor-pointer"
+                      onClick={() => {
+                        if (window.confirm("このお店にするのか？")) {
+                          /*
+                          ** こんな感じになる
+                          ** 送るクエリパラメータ
+                          ** title: 会食名
+                          ** date: 日時
+                          ** name: 店名
+                          ** address: 住所
+                          ** image: 画像URL
+                          */
+                          router.push(
+                            `/event/share?title=${title}&date=${dateParam}&name=${shop.name}&address=${shop.address}&image=${shop.photo && shop.photo.pc && shop.photo.pc.l}`
+                          );
+                        }
+                      }}
+                    />
+                  )}
+                  <h2 className="text-xl font-bold">{shop.name}</h2>
                   <p>
-                    <a
-                      href={shop.urls.pc}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 underline"
-                    >
-                      詳細ページを見る
-                    </a>
+                    <strong>住所:</strong> {shop.address}
                   </p>
-                )}
-              </div>
-            );
-          })
+                  <p>
+                    <strong>営業時間:</strong> {shop.open}
+                  </p>
+                  <p>
+                    <strong>キャッチ:</strong> {shop.catch}
+                  </p>
+                  {shop.urls && shop.urls.pc && (
+                    <p>
+                      <a
+                        href={shop.urls.pc}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 underline"
+                      >
+                        詳細ページを見る
+                      </a>
+                    </p>
+                  )}
+                </div>
+              );
+            })
+          )
         ) : (
           <Skeleton className="w-[100px] h-[20px] rounded-full" />
         )}
@@ -246,8 +251,8 @@ export default function ChoicePage() {
     <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 text-gray-950 pt-20">
       <div className="flex items-center mb-4">
         <Avatar className="w-16 h-16 mr-4">
-          <AvatarImage src="/images/ganko_oyaji.png" />
           <AvatarFallback>GZ</AvatarFallback>
+          <AvatarImage src="/images/ganko_oyaji.png" />
         </Avatar>
         <h1 className="text-3xl font-bold">＜こんなお店が良いんじゃないか？</h1>
       </div>
