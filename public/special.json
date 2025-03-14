@@ -1,0 +1,722 @@
+{
+  "results": {
+    "api_version": "1.30",
+    "results_available": 89,
+    "results_returned": "89",
+    "results_start": 1,
+    "special": [
+      {
+        "code": "LT0080",
+        "name": "1000円台の飲み放題付コース",
+        "special_category": {
+          "code": "SPF7",
+          "name": "飲み放題付コース"
+        }
+      },
+      {
+        "code": "LT0086",
+        "name": "2000円台の飲み放題付コース",
+        "special_category": {
+          "code": "SPF7",
+          "name": "飲み放題付コース"
+        }
+      },
+      {
+        "code": "LT0087",
+        "name": "3000円台の飲み放題付コース",
+        "special_category": {
+          "code": "SPF7",
+          "name": "飲み放題付コース"
+        }
+      },
+      {
+        "code": "LT0088",
+        "name": "4000円台の飲み放題付コース",
+        "special_category": {
+          "code": "SPF7",
+          "name": "飲み放題付コース"
+        }
+      },
+      {
+        "code": "LT0089",
+        "name": "食べ放題プランのあるお店",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LT0090",
+        "name": "コースじゃなくても飲み放題OKなお店",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LT0091",
+        "name": "3時間以上のゆっくり宴会ができるお店",
+        "special_category": {
+          "code": "SPF8",
+          "name": "おすすめコース"
+        }
+      },
+      {
+        "code": "LT0092",
+        "name": "2次会にオススメのお店",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LT0093",
+        "name": "合コンにオススメのお店",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LT0094",
+        "name": "ウェディングにオススメ！",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LT0095",
+        "name": "5～9人でもOKの個室",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LT0096",
+        "name": "10人以上でもOKの個室",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LT0097",
+        "name": "20人以上でもOKの個室",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LT0099",
+        "name": "座敷・掘りごたつのあるお店",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LU0001",
+        "name": "少人数でも貸切OKのお店",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LU0002",
+        "name": "貸切パーティーのできるお店",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LU0003",
+        "name": "20人以上の宴会が可能なお店",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LU0006",
+        "name": "落ち着ける雰囲気自慢のお店",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0007",
+        "name": "3～4人でくつろげる個室",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0008",
+        "name": "くつろぎの掘りごたつ式個室",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0014",
+        "name": "ソファーでまったりするお店",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0012",
+        "name": "大人たちの隠れ家",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0024",
+        "name": "深夜までやっているお店",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0015",
+        "name": "3000円以下のコース料理",
+        "special_category": {
+          "code": "SPF8",
+          "name": "おすすめコース"
+        }
+      },
+      {
+        "code": "LU0016",
+        "name": "3000～4000円台のご褒美コース",
+        "special_category": {
+          "code": "SPF8",
+          "name": "おすすめコース"
+        }
+      },
+      {
+        "code": "LU0017",
+        "name": "食事メインで楽しめるお店",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LY0081",
+        "name": "こだわりのビールが飲めるお店",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0011",
+        "name": "雰囲気がいいBAR",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LU0029",
+        "name": "デートで使いたいお店",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0010",
+        "name": "仕事帰りにサク飲み・サク飯",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0021",
+        "name": "ダーツ・カラオケなどで遊ぶ",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LU0033",
+        "name": "2人だけの空間があるお店",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0022",
+        "name": "女子の行きつけのお店",
+        "special_category": {
+          "code": "SPG2",
+          "name": "女性に嬉しい"
+        }
+      },
+      {
+        "code": "LU0013",
+        "name": "内装がオシャレなお店",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0023",
+        "name": "女の子同士で行くとオトク！",
+        "special_category": {
+          "code": "SPG2",
+          "name": "女性に嬉しい"
+        }
+      },
+      {
+        "code": "LU0009",
+        "name": "おしゃべりする夜カフェ夜ごはん",
+        "special_category": {
+          "code": "SPG2",
+          "name": "女性に嬉しい"
+        }
+      },
+      {
+        "code": "LU0019",
+        "name": "誕生日・記念日サービスあり",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LY0093",
+        "name": "お子様連れ歓迎のお店",
+        "special_category": {
+          "code": "SPG3",
+          "name": "ママにもやさしい"
+        }
+      },
+      {
+        "code": "LY0084",
+        "name": "家族で行きたいお店",
+        "special_category": {
+          "code": "SPG3",
+          "name": "ママにもやさしい"
+        }
+      },
+      {
+        "code": "LU0030",
+        "name": "カップルシート＆2人個室",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0027",
+        "name": "ホワイトデーデートのお店",
+        "special_category": {
+          "code": "SPG9",
+          "name": "季節のイベント"
+        }
+      },
+      {
+        "code": "LU0031",
+        "name": "夜景を楽しむデート",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0032",
+        "name": "カウンターで料理を愉しむ",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LU0034",
+        "name": "大人のゆったりデート",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0038",
+        "name": "記憶に残る記念日サプライズ",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LU0040",
+        "name": "今宵は贅沢グルメ",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0045",
+        "name": "5000～8000円の贅沢コース",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0049",
+        "name": "おすすめのホテルレストラン",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LY0089",
+        "name": "大人のデート・記念日",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0050",
+        "name": "一軒家で味わう、贅沢なひととき",
+        "special_category": {
+          "code": "SPF9",
+          "name": "大人なグルメ"
+        }
+      },
+      {
+        "code": "LY0085",
+        "name": "夜景を愉しむ非日常空間",
+        "special_category": {
+          "code": "SPG1",
+          "name": "デートにぴったり"
+        }
+      },
+      {
+        "code": "LU0048",
+        "name": "ゲストに喜ばれる接待・食事会",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LU0018",
+        "name": "焼酎、日本酒の種類が豊富なお店",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LZ0001",
+        "name": "サムギョプサル、サムゲタン…美味しい韓国料理を味わう！",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LZ0002",
+        "name": "おいしく飲んで食べられるバル・ビストロ",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LU0051",
+        "name": "梅酒・果実酒・カクテルの種類が豊富なお店",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LY0094",
+        "name": "ワイン・シャンパンの品ぞろえが自慢のお店",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0053",
+        "name": "郷土料理・ご当地メニュー！",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LY0090",
+        "name": "話題のB級グルメを味わう",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LU0054",
+        "name": "おいしいお肉が食べたい！",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0055",
+        "name": "地鶏・焼き鳥・焼きとんを食べたい！",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LU0056",
+        "name": "魚・海鮮類がおいしいお店",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LY0091",
+        "name": "体にやさしい野菜が食べたい！",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0057",
+        "name": "産地直送素材を食べたい！",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0058",
+        "name": "一度は食べたい看板メニュー",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LU0059",
+        "name": "体をいたわる健康・美容食",
+        "special_category": {
+          "code": "SPG3",
+          "name": "ママにもやさしい"
+        }
+      },
+      {
+        "code": "LY0083",
+        "name": "デザート・スイーツ・デザートバイキングがあるお店",
+        "special_category": {
+          "code": "SPG3",
+          "name": "ママにもやさしい"
+        }
+      },
+      {
+        "code": "LU0062",
+        "name": "各店おすすめのあったか鍋",
+        "special_category": {
+          "code": "SPG8",
+          "name": "旬の料理を楽しむ"
+        }
+      },
+      {
+        "code": "LU0063",
+        "name": "ふぐ・蟹・牡蠣など冬の絶品料理",
+        "special_category": {
+          "code": "SPG8",
+          "name": "旬の料理を楽しむ"
+        }
+      },
+      {
+        "code": "LU0065",
+        "name": "NEWOPEN・リニューアルOPEN・新登場のお店",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LY0088",
+        "name": "ランチのお店",
+        "special_category": {
+          "code": "SPD8",
+          "name": "ランチを楽しむ"
+        }
+      },
+      {
+        "code": "LU0042",
+        "name": "贅沢ランチのあるお店",
+        "special_category": {
+          "code": "SPD8",
+          "name": "ランチを楽しむ"
+        }
+      },
+      {
+        "code": "LZ0004",
+        "name": "学生さん大歓迎のお店",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LZ0005",
+        "name": "中華・アジアン・各国料理",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LZ0006",
+        "name": "ワンコインでランチを食べられるお店",
+        "special_category": {
+          "code": "SPD8",
+          "name": "ランチを楽しむ"
+        }
+      },
+      {
+        "code": "LT0082",
+        "name": "生ビールも飲み放題OKのお店",
+        "special_category": {
+          "code": "SPF7",
+          "name": "飲み放題付コース"
+        }
+      },
+      {
+        "code": "LY0064",
+        "name": "今月特別なイベントがあるお店",
+        "special_category": {
+          "code": "SPG9",
+          "name": "季節のイベント"
+        }
+      },
+      {
+        "code": "LZ0023",
+        "name": "結納・顔合わせ食事会・慶事に",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LZ0024",
+        "name": "お店の近くでお花見が楽しめるお店",
+        "special_category": {
+          "code": "SPG9",
+          "name": "季節のイベント"
+        }
+      },
+      {
+        "code": "LZ0027",
+        "name": "SNSでシェアしたいお店",
+        "special_category": {
+          "code": "SPG2",
+          "name": "女性に嬉しい"
+        }
+      },
+      {
+        "code": "LZ0028",
+        "name": "ハッピーアワーでオトクに楽しむ",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LZ0029",
+        "name": "こだわりの絶品ラーメンのあるお店",
+        "special_category": {
+          "code": "SPG6",
+          "name": "定番おすすめ"
+        }
+      },
+      {
+        "code": "LZ0030",
+        "name": "5000円台の飲み放題付コース",
+        "special_category": {
+          "code": "SPF7",
+          "name": "飲み放題付コース"
+        }
+      },
+      {
+        "code": "LZ0032",
+        "name": "辛いものが食べたい！",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LZ0042",
+        "name": "一人一皿のコースがあるお店",
+        "special_category": {
+          "code": "SPF8",
+          "name": "おすすめコース"
+        }
+      },
+      {
+        "code": "LZ0044",
+        "name": "おひとり様歓迎のお店",
+        "special_category": {
+          "code": "SPG5",
+          "name": "特別シーンなら"
+        }
+      },
+      {
+        "code": "LZ0045",
+        "name": "完全個室のお店",
+        "special_category": {
+          "code": "SPG4",
+          "name": "個室・貸切・設備で探す"
+        }
+      },
+      {
+        "code": "LZ0046",
+        "name": "チーズが食べたい",
+        "special_category": {
+          "code": "SPG7",
+          "name": "こだわり食材"
+        }
+      },
+      {
+        "code": "LZ0047",
+        "name": "昼飲みできるお店",
+        "special_category": {
+          "code": "SPD8",
+          "name": "ランチを楽しむ"
+        }
+      }
+    ]
+  }
+}
