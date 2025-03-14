@@ -1,5 +1,5 @@
 // // components/FallingStars.tsx
-// "use client"; // 必要に応じて指定
+// "use client"; 
 
 // import React from "react";
 

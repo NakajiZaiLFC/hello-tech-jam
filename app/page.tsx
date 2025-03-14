@@ -67,11 +67,11 @@ export default function Home() {
   const queryArea = city.trim() ? city : "";
 
   // ひらがな、カタカナ、漢字、英語（大文字・小文字）、および空白を許可する正規表現
-  const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z\s]+$/;
+  const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z0-9\s]+$/;
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (value.length >= 20) {
+    if (value.length >= 500) {
       alert("20文字以上の入力は許可されません");
       return;
     }
