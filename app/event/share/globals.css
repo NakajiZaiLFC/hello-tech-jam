@@ -1,23 +1,34 @@
-/* 例: globals.css などに追加 */
-/* starが上から下に落ちていくアニメーション */
+/* 
+   星が上から下へ素早く落ちるアニメーション
+   終わるとまた最初に戻り、無限に繰り返す 
+*/
 @keyframes fall {
     0% {
-      transform: translateY(-100%);
+      top: -50%;               /* 画面の上端よりさらに上からスタート */
+      transform: translateX(0);
       opacity: 1;
     }
+    50% {
+      opacity: 1;              /* 中間で十分視認可能 */
+    }
+    70% {
+        opacity: 1;              /* 中間で十分視認可能 */
+      }
+      
     100% {
-      transform: translateY(120vh); /* 画面外まで落ちる */
-      opacity: 0;
+      top: 110%;               /* 画面下端より下まで */
+      transform: translateX(var(--drift, 0px)); 
+      opacity: 0;              /* 消える */
     }
   }
   
-  /* starの動きを制御するクラス */
   .fall-animation {
     position: absolute;
-    top: 0;
     left: 0;
     animation-name: fall;
     animation-timing-function: linear;
-    /* duration や delay はインラインスタイルでランダムに付与する例を下で示す */
+    animation-fill-mode: none;     /* 最後に元の位置に戻す */
+    animation-iteration-count: infinite; /* 永久リピート */
+    pointer-events: none;          /* 星はクリック不可（飾り） */
   }
   
