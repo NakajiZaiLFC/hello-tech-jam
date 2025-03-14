@@ -83,6 +83,7 @@ export default function Home() {
   };
 
   return (
+    
     <div className="flex flex-col items-center justify-center min-h-screen bg-stone-50 text-stone-950 px-4">
       <div className="w-full max-w-md space-y-4">
         {/* 余白を削減: mt-20 → mt-8 または不要なら削除 */}

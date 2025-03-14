@@ -1,0 +1,34 @@
+/* 
+   星が上から下へ素早く落ちるアニメーション
+   終わるとまた最初に戻り、無限に繰り返す 
+*/
+@keyframes fall {
+    0% {
+      top: -50%;               /* 画面の上端よりさらに上からスタート */
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;              /* 中間で十分視認可能 */
+    }
+    70% {
+        opacity: 1;              /* 中間で十分視認可能 */
+      }
+      
+    100% {
+      top: 110%;               /* 画面下端より下まで */
+      transform: translateX(var(--drift, 0px)); 
+      opacity: 0;              /* 消える */
+    }
+  }
+  
+  .fall-animation {
+    position: absolute;
+    left: 0;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-fill-mode: none;     /* 最後に元の位置に戻す */
+    animation-iteration-count: infinite; /* 永久リピート */
+    pointer-events: none;          /* 星はクリック不可（飾り） */
+  }
+  
