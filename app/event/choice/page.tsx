@@ -30,6 +30,7 @@ interface Shop {
 interface HotPepperResponse {
   results: {
     shop: Shop[];
+    // 他のプロパティも存在するが、必要な部分のみ記述
   };
 }
 
@@ -172,6 +173,9 @@ function ChoiceDisplay() {
     fetchData();
   }, [proxyUrl]);
 
+  // shopDataは存在しなければ空配列とする
+  const shopData: Shop[] = fetchedData?.results?.shop ?? [];
+
   return (
     <div className="bg-white p-6 rounded shadow text-gray-950">
       {/* 3列グリッドで店舗カードを表示 */}
@@ -179,10 +183,10 @@ function ChoiceDisplay() {
         {error ? (
           <p className="text-red-500">エラー: {error}</p>
         ) : fetchedData ? (
-          fetchedData.results.shop.length === 0 ? (
+          shopData.length === 0 ? (
             <p>希望のお店は無いみたいだ</p>
           ) : (
-            fetchedData.results.shop.map((shop: Shop) => {
+            shopData.map((shop: Shop) => {
               return (
                 <div
                   key={shop.id}
