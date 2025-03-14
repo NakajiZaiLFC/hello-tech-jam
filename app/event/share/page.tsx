@@ -130,13 +130,20 @@ function ShareContent() {
 </button>
 
 
-          <Image
-            src="/images/map.jpg"
-            alt="地図"
-            width={300}
-            height={300}
-            className="mt-6 w-full max-w-[300px] rounded-lg shadow-md"
-          />
+<div className="relative mt-6 w-full max-w-[300px]">
+  <Image
+    src="/images/map.jpg"
+    alt="地図"
+    width={300}
+    height={300}
+    className="rounded-lg shadow-md w-full"
+  />
+  {/* オーバーレイコンテナ */}
+  <div className="absolute bottom-0 right-0 mb-2 mr-2 ml-2 bg-white rounded-full px-3 py-1 shadow-md">
+    <span className="text-blue-600 text-sm font-bold">那覇市おもろまち1-32-3</span>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
