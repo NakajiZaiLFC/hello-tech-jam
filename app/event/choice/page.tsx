@@ -1,15 +1,14 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @next/next/no-img-element */
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import LZString from "lz-string";
 import { parse, format } from "date-fns";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import specialData from "@/public/special.json";
 import genreData from "@/public/genre.json";
 import budgetData from "@/public/budget.json";
-import { Skeleton } from "@/components/ui/skeleton"
-
+import { Skeleton } from "@/components/ui/skeleton";
 
 // 型定義
 interface Shop {
@@ -42,10 +41,10 @@ function ChoiceDisplay() {
   const title = searchParams.get("title") || "";
   const dateParam = searchParams.get("date") || "";
   const area = searchParams.get("area") || "";
-  let scene = searchParams.get("scene") || "";
-  let food = searchParams.get("food") || "";
-  let cost = searchParams.get("cost") || "";
-  let num = searchParams.get("num") || "";
+  const scene = searchParams.get("scene") || "";
+  const food = searchParams.get("food") || "";
+  const cost = searchParams.get("cost") || "";
+  const num = searchParams.get("num") || "";
   const seat = searchParams.get("seat") || "";
   let question = searchParams.get("question") || "";
 
@@ -138,11 +137,11 @@ function ChoiceDisplay() {
     (queryParams.cost ? `&budget=${encodeURIComponent(queryParams.cost)}` : "") +
     (seat && seat !== "特になし"
       ? seat === "貸切"
-        ? "&seatParam=charter=1"
+        ? "&charter=1"
         : seat === "お座敷"
-        ? "&seatParam=tatami=1"
+        ? "&tatami=1"
         : seat === "個室"
-        ? "&seatParam=private_room=1"
+        ? "&private_room=1"
         : ""
       : "") +
     (queryParams.question ? `&keyword=${encodeURIComponent(queryParams.question)}` : "");
@@ -176,16 +175,12 @@ function ChoiceDisplay() {
   return (
     <div className="bg-white p-6 rounded shadow text-gray-950">
       {/* 3列グリッドで店舗カードを表示 */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {error ? (
           <p className="text-red-500">エラー: {error}</p>
         ) : fetchedData ? (
           fetchedData.results.shop.map((shop: Shop) => {
             // 遷移先 URL 用に shop.urls.pc を圧縮
-            const compressedUrl =
-              shop.urls && shop.urls.pc
-                ? LZString.compressToEncodedURIComponent(shop.urls.pc)
-                : "";
             return (
               <div
                 key={shop.id}
@@ -199,18 +194,16 @@ function ChoiceDisplay() {
                     className="w-full h-auto mb-2 cursor-pointer"
                     onClick={() => {
                       if (window.confirm("このお店にするのか？")) {
-						/*
-						** こんな感じになる
-						** 送るクエリパラメータ
-						** title: 会食名
-						** date: 日時
-						** name: 店名
-						** address: 住所
-						** image: 画像URL
-						** 例↓
-						** http://localhost:3000/event/share?title=%E3%83%86%E3%82%B9%E3%83%88&date=2025-03-14-19-00&name=%E5%B1%85%E9%85%92%E5%B1%8B%20%E4%B8%83%E6%AE%B5%20%E5%A5%A5%E6%AD%A6%E5%B1%B1%E5%BA%97&address=%E6%B2%96%E7%B8%84%E7%9C%8C%E9%82%A3%E8%A6%87%E5%B8%82%E9%8F%A1%E5%8E%9F%E7%94%BA10-20&image=https://imgfp.hotp.jp/IMGH/69/43/P045676943/P045676943_238.jpg
-						*/ 
-						router.push(`/event/share?title=${title}&date=${formattedDate}&name=${shop.name}&address=${shop.address}&image=${shop.photo && shop.photo.pc && shop.photo.pc.l}`);
+                        /*
+                        ** こんな感じになる
+                        ** 送るクエリパラメータ
+                        ** title: 会食名
+                        ** date: 日時
+                        ** name: 店名
+                        ** address: 住所
+                        ** image: 画像URL
+                        */
+                        router.push(`/event/share?title=${title}&date=${dateParam}&name=${shop.name}&address=${shop.address}&image=${shop.photo && shop.photo.pc && shop.photo.pc.l}`);
                       }
                     }}
                   />
@@ -241,7 +234,7 @@ function ChoiceDisplay() {
             );
           })
         ) : (
-			<Skeleton className="w-[100px] h-[20px] rounded-full" />
+          <Skeleton className="w-[100px] h-[20px] rounded-full" />
         )}
       </div>
     </div>

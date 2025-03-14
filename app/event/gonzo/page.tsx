@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,6 @@ import { questions } from "@/constants/questions";
 import { Input } from "@/components/ui/input";
 
 function HomeContent() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const title = searchParams.get("title") || "";
   const date = searchParams.get("date") || "";
@@ -116,12 +115,8 @@ function HomeContent() {
     question: queryQuestion,
   };
   const filteredParams = Object.fromEntries(
-    Object.entries(allParams).filter(([_, value]) => value !== "スキップ")
+    Object.entries(allParams).filter(([, value]) => value !== "スキップ")
   );
-  // 各要素を改行で連結したデバッグ用の文字列
-//   const debugQueryString = Object.entries(filteredParams)
-//     .map(([key, value]) => `${key}=${value}`)
-//     .join("\n");
 
   return (
     <div className="w-full justify-center items-center min-h-screen bg-stone-50">

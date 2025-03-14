@@ -20,7 +20,7 @@ export async function GET(request) {
 	  (budget ? `&budget=${budget}` : "") +
 	  (seatParam ? `&${seatParam}` : "") +
 	  (keyword ? `&keyword=${keyword}` : "") +
-	  `&count=9&format=json`;
+	  "&count=9&format=json";
 	
 	try {
 	  const response = await fetch(apiUrl);
