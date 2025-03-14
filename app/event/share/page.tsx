@@ -1,34 +1,25 @@
 "use client";
-import "./globals.css"
+import "./globals.css";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import LZString from "lz-string";
 import { Card, CardTitle } from "@/components/ui/card";
 
 function FallingStars() {
-  // 星の配置情報
   const [stars, setStars] = useState<
-    Array<{
-      left: string;     // 画面幅に対するX位置(%)
-      drift: string;    // 横方向のドリフト(px)
-      delay: string;    // 落下開始の遅延(s)
-      duration: string; // 落下にかかる時間(s)
-    }>
+    Array<{ left: string; drift: string; delay: string; duration: string }>
   >([]);
 
   useEffect(() => {
     const STAR_COUNT = 20;
-    const random = (min: number, max: number) =>
-      Math.random() * (max - min) + min;
+    const random = (min: number, max: number) => Math.random() * (max - min) + min;
 
-    // ランダムなパラメータを生成
-    const newStars = Array.from({ length: STAR_COUNT }).map(() => {
-      const left = `${random(0, 100)}%`;       // 画面横幅の0%〜100%のランダム
-      const drift = `${random(-100, 100)}px`;   // 左右ドリフト(-100px〜100px)
-      const delay = `${random(0, 5)}s`;          // 0〜5秒遅れて落下開始
-      const duration = `${random(5, 10)}s`;      // 落下にかかる秒数(5〜10秒)
-      return { left, drift, delay, duration };
-    });
+    const newStars = Array.from({ length: STAR_COUNT }).map(() => ({
+      left: `${random(0, 100)}%`,
+      drift: `${random(-100, 100)}px`,
+      delay: `${random(0, 5)}s`,
+      duration: `${random(5, 10)}s`,
+    }));
 
     setStars(newStars);
   }, []);
@@ -40,10 +31,10 @@ function FallingStars() {
           key={i}
           src="/images/star.png"
           alt="star"
-          className="fall-animation" // → globals.css で定義
+          className="fall-animation"
           style={{
             left: star.left,
-            ["--drift" as any]: star.drift,   // driftをCSS変数として渡す
+            ["--drift" as any]: star.drift,
             animationDelay: star.delay,
             animationDuration: star.duration,
             width: "30px",
@@ -58,99 +49,67 @@ function FallingStars() {
 function ShareContent() {
   const searchParams = useSearchParams();
 
-  const urlParam = searchParams.get("url");
-  let originalUrl = "";
-  if (urlParam) {
-    originalUrl = LZString.decompressFromEncodedURIComponent(urlParam);
-  }
-
-  const name = searchParams.get("name") || "焼肉太郎　那覇点";
-  const tel = searchParams.get("tel") || "電話番号なし";
-  const lat = searchParams.get("lat") || "緯度なし";
-  const lng = searchParams.get("lng") || "経度なし";
   const title = searchParams.get("title") || "比嘉さん誕生日会";
-  const date = searchParams.get("date") || "20240801"; 
+  const name = searchParams.get("name") || "焼肉太郎　那覇店";
+  const date = searchParams.get("date") || "202408011800";
 
-  // date=20240801 の場合
   const year = date.slice(0, 4);
-  const month = date.slice(4, 6); 
+  const month = date.slice(4, 6);
   const day = date.slice(6, 8);
   const hour = date.slice(8, 10);
-  const minute = date.slice(10, 12); 
+  const minute = date.slice(10, 12);
 
-  // クリック時にコピーする処理
   const handleCopy = () => {
-    const textToCopy = `${title}に招待されました！焼肉きんぐ那覇店\n${year}年 ${month}月 ${day}日\n${hour}:${minute}〜\n`;
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        alert("コピーしました！");
-      })
-      .catch((err) => {
-        console.error("コピーに失敗しました: ", err);
-      });
+    const textToCopy = `${title}に招待されました！\n${year}年${month}月${day}日 ${hour}:${minute}〜`;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      alert("招待メッセージをコピーしました！i");
+
+    });
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-fixed flex flex-col items-center">
-      <h1 className="mt-30 text-white px-4 py-2 font-bold tracking-wide text-[5vw]">
-        {title} !
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex flex-col items-center p-4 md:p-8">
+      <h1 className="mt-10 text-white font-bold tracking-wide text-4xl md:text-6xl text-center">
+        {title}!
       </h1>
 
-      <div className="mx-20 mb-50 flex flex-col md:flex-row justify-between items-center w-full space-y-4 md:space-y-0 md:space-x-4">
-        <div className="w-full flex justify-center">
-          {/* 画像を中央寄せにし、画面幅に合わせてリサイズ */}
+      <div className="mt-10 max-w-5xl w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
+        {/* 画像エリア */}
+        <div className="md:w-1/2 w-full flex justify-center items-center p-4">
           <img
             src="https://yakiniku-watami.com/yokohama/wp-content/uploads/sites/27/2024/07/yakiniku_2407_2w1.jpg"
-            alt="画像の説明"
-            className="h-auto mx-auto"
-            style={{ maxWidth: "500px", width: "100%" }}
+            alt="焼肉の画像"
+            className="rounded-2xl object-cover w-full h-auto max-h-[400px]"
           />
         </div>
 
-        {/* 右のテキスト部分 */}
-        <div className="flex flex-row items-center">
-          <div className="ml-5 mr-7">
-            <p className="text-white text-5xl font-bold">焼肉太郎 那覇店</p>
-            <p className="text-white text-5xl mt-4">
-              <a
-                href="https://example.com"
-                className="underline hover:text-blue-300"
-              >
-                https://example.com
-              </a>
-            </p>
+        {/* 情報エリア */}
+        <div className="md:w-1/2 w-full flex flex-col items-center justify-center p-6">
+          <a href="https://example.com"className="text-blue-600 text-3xl md:text-4xl font-bold mb-4">
+          ${name}
+          </a>
 
-            <Card className="bg-white mt-4 rounded-3xl shadow-lg">
-              <div className="flex flex-col md:flex-row">
-                <CardTitle className="ml-7 mr-7 text-4xl font-bold text-blue-500 whitespace-nowrap">
-                  {year}年 {month}月 {day}日
-                </CardTitle>
-                <CardTitle className="ml-7 mr-7 text-4xl font-bold text-blue-500 whitespace-nowrap">
-                  {hour}:{minute}〜
-                </CardTitle>
-              </div>
-            </Card>
+          <Card className="bg-blue-500 mt-4 rounded-xl shadow-md w-full">
+  <div className="flex flex-col items-center p-4">
+    <CardTitle className="text-white text-2xl">
+      {year}年 {month}月 {day}日
+    </CardTitle>
+    <CardTitle className="text-white text-2xl">
+      {hour}:{minute}〜
+    </CardTitle>
+  </div>
+</Card>
 
-            <p className="mt-4 mb-20 text-white text-3xl font-semibold">
-              盛り上げていきましょう！
-            </p>
+          <p className="mt-4 text-gray-700 text-xl font-semibold">盛り上げていきましょう！</p>
 
-            {/* コピー用ボタン */}
-            <button
-              onClick={handleCopy}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-2xl font-bold"
-            >
-              招待メッセージをコピー
-            </button>
-          </div>
+          <button
+            onClick={handleCopy}
+            className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg text-xl font-bold"
+          >
+            招待メッセージをコピー
+          </button>
 
-          <div className="mr-20 flex flex-col items-center mb-10">
-            <img
-              src="/images/map.jpg"
-              style={{ width: "200px" }}
-              alt="地図"
-            />
-          </div>
+          <img src="/images/map.jpg" alt="地図" className="mt-6 w-full max-w-[300px] rounded-lg shadow-md" />
         </div>
       </div>
     </div>
