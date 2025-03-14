@@ -146,6 +146,7 @@ function ChoiceDisplay() {
       : "") +
     (queryParams.question ? `&keyword=${encodeURIComponent(queryParams.question)}` : "");
 
+  // APIデータ状態管理
   const [error, setError] = useState<string | null>(null);
   const [fetchedData, setFetchedData] = useState<HotPepperResponse | null>(null);
 
