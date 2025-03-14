@@ -30,6 +30,7 @@ interface Shop {
 interface HotPepperResponse {
   results: {
     shop: Shop[];
+    // 他のプロパティも存在するが、今回必要な部分のみ記述
   };
 }
 
@@ -179,6 +180,7 @@ function ChoiceDisplay() {
         {error ? (
           <p className="text-red-500">エラー: {error}</p>
         ) : fetchedData ? (
+          Array.isArray(fetchedData.results.shop) &&
           fetchedData.results.shop.length === 0 ? (
             <p>希望のお店は無いみたいだ</p>
           ) : (
