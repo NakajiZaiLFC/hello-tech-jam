@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Card, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { Send } from "@mynaui/icons-react";
 
 // Star の型定義
 type StarType = {
@@ -83,7 +84,7 @@ function ShareContent() {
         {title}!
       </h1>
 
-      <div className="mt-10 max-w-5xl w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
+      <div className="mt-7 mb-40 max-w-5xl w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
         {/* 画像エリア */}
         <div className="md:w-1/2 w-full flex justify-center items-center p-4">
           <Image
@@ -105,7 +106,7 @@ function ShareContent() {
             {name}
           </a>
 
-          <Card className="bg-blue-500 mt-4 rounded-xl shadow-md w-full">
+          <Card className="bg-blue-500 rounded-xl shadow-md w-full">
             <div className="flex flex-col items-center p-4">
               <CardTitle className="text-white text-2xl">
                 {year}年 {month}月 {day}日
@@ -121,19 +122,28 @@ function ShareContent() {
           </p>
 
           <button
-            onClick={handleCopy}
-            className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg text-xl font-bold"
-          >
-            招待メッセージをコピー
-          </button>
+  onClick={handleCopy}
+  className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg text-xl font-bold flex items-center justify-center space-x-2"
+>
+  <span>招待メッセージをコピー</span>
+  <Send />
+</button>
 
-          <Image
-            src="/images/map.jpg"
-            alt="地図"
-            width={300}
-            height={300}
-            className="mt-6 w-full max-w-[300px] rounded-lg shadow-md"
-          />
+
+<div className="relative mt-6 w-full max-w-[300px]">
+  <Image
+    src="/images/map.jpg"
+    alt="地図"
+    width={300}
+    height={300}
+    className="rounded-lg shadow-md w-full"
+  />
+  {/* オーバーレイコンテナ */}
+  <div className="absolute bottom-0 right-0 mb-2 mr-2 ml-2 bg-white rounded-full px-3 py-1 shadow-md">
+    <span className="text-blue-600 text-sm font-bold">那覇市おもろまち1-32-3</span>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
