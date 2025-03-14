@@ -2,13 +2,19 @@
 import "./globals.css";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import LZString from "lz-string";
 import { Card, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
+
+// Star の型定義
+type StarType = {
+  left: string;
+  drift: string;
+  delay: string;
+  duration: string;
+};
 
 function FallingStars() {
-  const [stars, setStars] = useState<
-    Array<{ left: string; drift: string; delay: string; duration: string }>
-  >([]);
+  const [stars, setStars] = useState<StarType[]>([]);
 
   useEffect(() => {
     const STAR_COUNT = 20;
@@ -27,19 +33,24 @@ function FallingStars() {
   return (
     <div className="pointer-events-none fixed top-0 left-0 w-full h-full overflow-hidden z-50">
       {stars.map((star, i) => (
-        <img
+        <Image
           key={i}
           src="/images/star.png"
           alt="star"
+          // スタイルに型アサーションを付けてカスタムプロパティを扱う
+          style={
+            {
+              left: star.left,
+              "--drift": star.drift,
+              animationDelay: star.delay,
+              animationDuration: star.duration,
+              width: "30px",
+              height: "30px",
+            } as React.CSSProperties
+          }
           className="fall-animation"
-          style={{
-            left: star.left,
-            ["--drift" as any]: star.drift,
-            animationDelay: star.delay,
-            animationDuration: star.duration,
-            width: "30px",
-            height: "30px",
-          }}
+          width={30}
+          height={30}
         />
       ))}
     </div>
@@ -62,8 +73,7 @@ function ShareContent() {
   const handleCopy = () => {
     const textToCopy = `${title}に招待されました！\n${year}年${month}月${day}日 ${hour}:${minute}〜`;
     navigator.clipboard.writeText(textToCopy).then(() => {
-      alert("招待メッセージをコピーしました！i");
-
+      alert("招待メッセージをコピーしました！");
     });
   };
 
@@ -76,31 +86,39 @@ function ShareContent() {
       <div className="mt-10 max-w-5xl w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
         {/* 画像エリア */}
         <div className="md:w-1/2 w-full flex justify-center items-center p-4">
-          <img
-            src="https://yakiniku-watami.com/yokohama/wp-content/uploads/sites/27/2024/07/yakiniku_2407_2w1.jpg"
+          <Image
+            // src="https://yakiniku-watami.com/yokohama/wp-content/uploads/sites/27/2024/07/yakiniku_2407_2w1.jpg"
+              src="/images/yakiniku.jpg"
             alt="焼肉の画像"
+            width={600}
+            height={400}
             className="rounded-2xl object-cover w-full h-auto max-h-[400px]"
           />
         </div>
 
         {/* 情報エリア */}
         <div className="md:w-1/2 w-full flex flex-col items-center justify-center p-6">
-          <a href="https://example.com"className="text-blue-600 text-3xl md:text-4xl font-bold mb-4">
-          ${name}
+          <a
+            href="https://example.com"
+            className="text-blue-600 text-3xl md:text-4xl font-bold mb-4"
+          >
+            {name}
           </a>
 
           <Card className="bg-blue-500 mt-4 rounded-xl shadow-md w-full">
-  <div className="flex flex-col items-center p-4">
-    <CardTitle className="text-white text-2xl">
-      {year}年 {month}月 {day}日
-    </CardTitle>
-    <CardTitle className="text-white text-2xl">
-      {hour}:{minute}〜
-    </CardTitle>
-  </div>
-</Card>
+            <div className="flex flex-col items-center p-4">
+              <CardTitle className="text-white text-2xl">
+                {year}年 {month}月 {day}日
+              </CardTitle>
+              <CardTitle className="text-white text-2xl">
+                {hour}:{minute}〜
+              </CardTitle>
+            </div>
+          </Card>
 
-          <p className="mt-4 text-gray-700 text-xl font-semibold">盛り上げていきましょう！</p>
+          <p className="mt-4 text-gray-700 text-xl font-semibold">
+            盛り上げていきましょう！
+          </p>
 
           <button
             onClick={handleCopy}
@@ -109,7 +127,13 @@ function ShareContent() {
             招待メッセージをコピー
           </button>
 
-          <img src="/images/map.jpg" alt="地図" className="mt-6 w-full max-w-[300px] rounded-lg shadow-md" />
+          <Image
+            src="/images/map.jpg"
+            alt="地図"
+            width={300}
+            height={300}
+            className="mt-6 w-full max-w-[300px] rounded-lg shadow-md"
+          />
         </div>
       </div>
     </div>
