@@ -61,9 +61,11 @@ function FallingStars() {
 function ShareContent() {
   const searchParams = useSearchParams();
 
+  const image = searchParams.get("image") || "/images/yakiniku.jpg";
   const title = searchParams.get("title") || "比嘉さん誕生日会";
   const name = searchParams.get("name") || "焼肉太郎　那覇店";
   const date = searchParams.get("date") || "202408011800";
+  const address = searchParams.get("address") || "那覇市おもろまち1-32-3";
 
   const year = date.slice(0, 4);
   const month = date.slice(4, 6);
@@ -77,6 +79,7 @@ function ShareContent() {
       alert("招待メッセージをコピーしました！");
     });
   };
+  console.log("image", image);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex flex-col items-center p-4 md:p-8">
@@ -88,8 +91,8 @@ function ShareContent() {
         {/* 画像エリア */}
         <div className="md:w-1/2 w-full flex justify-center items-center p-4">
           <Image
-            // src="https://yakiniku-watami.com/yokohama/wp-content/uploads/sites/27/2024/07/yakiniku_2407_2w1.jpg"
-              src="/images/yakiniku.jpg"
+            src={image}
+            //   src="/images/yakiniku.jpg"
             alt="焼肉の画像"
             width={600}
             height={400}
@@ -140,7 +143,7 @@ function ShareContent() {
   />
   {/* オーバーレイコンテナ */}
   <div className="absolute bottom-0 right-0 mb-2 mr-2 ml-2 bg-white rounded-full px-3 py-1 shadow-md">
-    <span className="text-blue-600 text-sm font-bold">那覇市おもろまち1-32-3</span>
+    <span className="text-blue-600 text-sm font-bold">{address}</span>
   </div>
 </div>
 

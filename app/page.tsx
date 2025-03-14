@@ -68,7 +68,7 @@ export default function Home() {
   const queryArea = city.trim() ? city : "";
 
   // ひらがな、カタカナ、漢字、英語（大文字・小文字）、および全角数字と空白を許可する正規表現
-  const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z\uFF10-\uFF19\s]+$/;
+  const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z0-9\uFF10-\uFF19\s]+$/;
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -85,6 +85,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-stone-50 text-stone-950 px-4">
+	<div className="max-w-md w-full bg-white shadow-md rounded-lg p-6">
+		<h1 className="text-2xl font-bold mb-4 text-center">新規イベント作成</h1>
       <div className="w-full max-w-md space-y-4">
         {/* 余白を削減: mt-20 → mt-8 または不要なら削除 */}
         <div className="mt-8">
@@ -176,5 +178,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+	</div>
   );
 }
