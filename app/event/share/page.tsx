@@ -106,7 +106,7 @@ function ShareContent() {
             {name}
           </a>
 
-          <Card className="bg-blue-500  rounded-xl shadow-md w-full">
+          <Card className="bg-blue-500 rounded-xl shadow-md w-full">
             <div className="flex flex-col items-center p-4">
               <CardTitle className="text-white text-2xl">
                 {year}年 {month}月 {day}日
