@@ -42,14 +42,14 @@ function ShareContent() {
           <img
             src="https://yakiniku-watami.com/yokohama/wp-content/uploads/sites/27/2024/07/yakiniku_2407_2w1.jpg"
             alt="画像の説明"
-            className="ml-7 mr-7max-w-full h-auto"
-            style={{ width: "400px" }}
+            className="ml-18  h-auto"
+            style={{ width: "500px" }}
           />
         </div>
 
         {/* 右のテキスト部分 */}
         <div className="flex flex-row items-center">
-        <div className="ml-7 mr-7">
+        <div className="ml-5 mr-7">
           <p className="text-white text-5xl font-bold">焼肉太郎 那覇店</p>
           <p className="text-white text-5xl mt-4">
             <a
@@ -72,12 +72,12 @@ function ShareContent() {
 
           </Card>
 
-          <p className="mt-4 text-white text-3xl font-semibold">
+          <p className="mt-4 mb-20 text-white text-3xl font-semibold">
             盛り上げていきましょう！
           </p>
         </div>
 
-        <div className="mr-7 flex flex-col items-center mb-10">
+        <div className="mr-20 flex flex-col items-center mb-10">
           <img
             src="/images/map.jpg"
             // alt="説明文"

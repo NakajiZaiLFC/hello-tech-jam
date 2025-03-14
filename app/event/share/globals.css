@@ -1,0 +1,23 @@
+/* 例: globals.css などに追加 */
+/* starが上から下に落ちていくアニメーション */
+@keyframes fall {
+    0% {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(120vh); /* 画面外まで落ちる */
+      opacity: 0;
+    }
+  }
+  
+  /* starの動きを制御するクラス */
+  .fall-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: fall;
+    animation-timing-function: linear;
+    /* duration や delay はインラインスタイルでランダムに付与する例を下で示す */
+  }
+  
