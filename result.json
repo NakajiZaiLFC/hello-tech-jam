@@ -1,0 +1,390 @@
+{
+  "results": {
+    "api_version": "1.30",
+    "results_available": 4,
+    "results_returned": "4",
+    "results_start": 1,
+    "shop": [
+      {
+        "id": "J003625164",
+        "name": "炭火焼鳥 肉寿司 鍋 しゃぶしゃぶ 食べ飲み放題 完全個室居酒屋 もてなしや 新宿本店",
+        "logo_image": "https://imgfp.hotp.jp/IMGH/96/37/P045069637/P045069637_69.jpg",
+        "name_kana": "たべのみほうだい　かんぜんこしついざかや　もてなしや　しんじゅくほんてん",
+        "address": "東京都新宿区新宿３-27-5 ケースリービル 5F",
+        "station_name": "新宿",
+        "ktai_coupon": 0,
+        "large_service_area": {
+          "code": "SS10",
+          "name": "関東"
+        },
+        "service_area": {
+          "code": "SA11",
+          "name": "東京"
+        },
+        "large_area": {
+          "code": "Z011",
+          "name": "東京"
+        },
+        "middle_area": {
+          "code": "Y055",
+          "name": "新宿"
+        },
+        "small_area": {
+          "code": "XA00",
+          "name": "新宿東口"
+        },
+        "lat": 35.6912222874,
+        "lng": 139.7017932399,
+        "genre": {
+          "name": "居酒屋",
+          "catch": "新宿 居酒屋 焼き鳥 個室 食べ飲み放題",
+          "code": "G001"
+        },
+        "sub_genre": {
+          "name": "和食",
+          "code": "G004"
+        },
+        "budget": {
+          "code": "B002",
+          "name": "2001～3000円",
+          "average": "2980円 全200種『焼鳥』『肉寿司』『しゃぶしゃぶ』食べ飲み放題"
+        },
+        "catch": "超特価食べ飲み放題2980円 新宿駅1分★個室居酒屋",
+        "capacity": 130,
+        "access": "新宿駅徒歩1分◆和モダン完全個室居酒屋◆最大130名様まで対応可能♪2980円200品の焼き鳥肉寿司食べ飲み放題プラン",
+        "mobile_access": "新宿駅徒歩1分/2980円200品豪華食べ飲み放題!!",
+        "urls": {
+          "pc": "https://www.hotpepper.jp/strJ003625164/?vos=nhppalsa000016"
+        },
+        "photo": {
+          "pc": {
+            "l": "https://imgfp.hotp.jp/IMGH/96/40/P045069640/P045069640_238.jpg",
+            "m": "https://imgfp.hotp.jp/IMGH/96/40/P045069640/P045069640_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/96/40/P045069640/P045069640_58_s.jpg"
+          },
+          "mobile": {
+            "l": "https://imgfp.hotp.jp/IMGH/96/40/P045069640/P045069640_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/96/40/P045069640/P045069640_100.jpg"
+          }
+        },
+        "open": "月～木: 13:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）金、祝前日: 13:00～翌1:00 （料理L.O. 翌0:00 ドリンクL.O. 翌0:30）土: 12:00～翌1:00 （料理L.O. 翌0:00 ドリンクL.O. 翌0:30）日、祝日: 12:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）",
+        "close": "年中無休!!",
+        "party_capacity": 130,
+        "other_memo": "利酒師がいる/シェフがいる/ワインセラー/TVスポーツ観戦ができる/マイク利用可",
+        "shop_detail_memo": "コース以外のご利用の場合は、お一人様、料理2品＋2ドリンク制になりますので予めご了承下さい！",
+        "budget_memo": "お通し代380円頂戴致します。",
+        "wedding": "新宿個室居酒屋で二次会・ウェディングプラン多数あり！是非当店へ！",
+        "course": "あり",
+        "free_drink": "あり ：【飲み放題ドリンク200種類以上】新宿駅徒歩3分 九州料理×黒毛和牛 完全個室  もてなしや　新宿本店",
+        "free_food": "あり ：【食べ飲み放題3時間2980円コミコミ価格!50種類の『肉炊きしゃぶしゃぶ』『肉寿司』食べ放題プラン ",
+        "private_room": "あり ：2名様～利用可能な個室席を多数ご用意しております。",
+        "horigotatsu": "なし ：なし。2名様～利用可能な個室席を多数ご用意しております。",
+        "tatami": "なし ：座敷なし。2名様～利用可能な個室席を多数ご用意しております。",
+        "card": "利用可",
+        "non_smoking": "一部禁煙",
+        "charter": "貸切可 ：80名様～最大130名様(個室・半個室・座敷・ソファー席)",
+        "parking": "あり ：近くにコインパーキングあり",
+        "barrier_free": "なし",
+        "show": "なし",
+        "karaoke": "なし",
+        "band": "不可",
+        "tv": "あり",
+        "lunch": "あり",
+        "midnight": "営業している",
+        "english": "あり",
+        "pet": "不可",
+        "child": "お子様連れ歓迎 ：乳児からOK",
+        "wifi": "あり",
+        "coupon_urls": {
+          "pc": "https://www.hotpepper.jp/strJ003625164/map/?vos=nhppalsa000016",
+          "sp": "https://www.hotpepper.jp/strJ003625164/scoupon/?vos=nhppalsa000016"
+        }
+      },
+      {
+        "id": "J001238752",
+        "name": "焼き鳥の絆 KIZUNA 新宿東口店",
+        "logo_image": "https://imgfp.hotp.jp/IMGH/67/41/P041656741/P041656741_69.jpg",
+        "name_kana": "こしつ　いざかや　やきとりのきずな　しんじゅく",
+        "address": "東京都新宿区歌舞伎町１-23-12 4F",
+        "station_name": "新宿",
+        "ktai_coupon": 0,
+        "large_service_area": {
+          "code": "SS10",
+          "name": "関東"
+        },
+        "service_area": {
+          "code": "SA11",
+          "name": "東京"
+        },
+        "large_area": {
+          "code": "Z011",
+          "name": "東京"
+        },
+        "middle_area": {
+          "code": "Y055",
+          "name": "新宿"
+        },
+        "small_area": {
+          "code": "XA00",
+          "name": "新宿東口"
+        },
+        "lat": 35.6945066221,
+        "lng": 139.7011137207,
+        "genre": {
+          "name": "居酒屋",
+          "catch": "全席個室居酒屋 焼き鳥 おでん 食べ放題",
+          "code": "G001"
+        },
+        "sub_genre": {
+          "name": "和食",
+          "code": "G004"
+        },
+        "budget": {
+          "code": "B002",
+          "name": "2001～3000円",
+          "average": "2480円（全席個室居酒屋で焼き鳥 おでん 鍋 食べ放題）"
+        },
+        "catch": "焼き鳥が食べ放題！ 選び抜かれた鮮魚の刺身",
+        "capacity": 80,
+        "access": "新宿駅徒歩2分！全席個室居酒屋で焼き鳥&おでん食べ放題",
+        "mobile_access": "新宿駅徒歩2分 全席個室居酒屋 焼き鳥&おでん食べ放題",
+        "urls": {
+          "pc": "https://www.hotpepper.jp/strJ001238752/?vos=nhppalsa000016"
+        },
+        "photo": {
+          "pc": {
+            "l": "https://imgfp.hotp.jp/IMGH/77/98/P044267798/P044267798_238.jpg",
+            "m": "https://imgfp.hotp.jp/IMGH/77/98/P044267798/P044267798_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/77/98/P044267798/P044267798_58_s.jpg"
+          },
+          "mobile": {
+            "l": "https://imgfp.hotp.jp/IMGH/77/98/P044267798/P044267798_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/77/98/P044267798/P044267798_100.jpg"
+          }
+        },
+        "open": "月～日、祝日、祝前日: 12:00～15:00 （料理L.O. 14:00 ドリンクL.O. 14:00）17:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:00）",
+        "close": "無休当店は全席個室を完備している居酒屋です！",
+        "party_capacity": 80,
+        "other_memo": "貸切・パーティーなど気軽にご相談ください♪個室で焼き鳥食べ放題！",
+        "shop_detail_memo": "新宿 個室 居酒屋 肉寿司 焼き鳥 食べ放題 飲み放題 3時間 食べ飲み放題 ランチ 昼飲み 誕生日 おでん",
+        "budget_memo": "キャンセル料：前日30%、当日100%頂戴しております。",
+        "wedding": "新宿 個室 居酒屋 焼き鳥 おでん 鍋 食べ放題 飲み放題 3時間 食べ飲み放題 ランチ",
+        "course": "あり",
+        "free_drink": "あり ：全席個室居酒屋で焼き鳥 おでん 鍋 食べ放題",
+        "free_food": "あり ：全席個室居酒屋で焼き鳥 おでん 鍋 食べ放題",
+        "private_room": "あり ：当店は全席個室を完備している居酒屋です！",
+        "horigotatsu": "なし ：当店は全席個室を完備している居酒屋です！",
+        "tatami": "なし ：当店は全席個室を完備している居酒屋です！",
+        "card": "利用可",
+        "non_smoking": "禁煙席なし",
+        "charter": "貸切可 ：当店は全席個室を完備している居酒屋です！",
+        "parking": "なし ：お近くにパーキング有",
+        "barrier_free": "あり ：最大80名様♪お気軽に貸切のご相談など承ります◎",
+        "show": "なし",
+        "karaoke": "なし",
+        "band": "不可",
+        "tv": "あり",
+        "lunch": "あり",
+        "midnight": "営業していない",
+        "english": "あり",
+        "pet": "不可",
+        "child": "お子様連れOK ：全席個室居酒屋で焼き鳥 おでん 鍋 食べ放題",
+        "wifi": "あり",
+        "coupon_urls": {
+          "pc": "https://www.hotpepper.jp/strJ001238752/map/?vos=nhppalsa000016",
+          "sp": "https://www.hotpepper.jp/strJ001238752/scoupon/?vos=nhppalsa000016"
+        }
+      },
+      {
+        "id": "J003625165",
+        "name": "寿司 肉寿司 焼鳥 もつ鍋 食べ飲み放題 完全個室居酒屋 肉と海鮮 もてなし屋 新宿本店",
+        "logo_image": "https://imgfp.hotp.jp/IMGH/97/04/P045069704/P045069704_69.jpg",
+        "name_kana": "たべのみほうだい　かんぜんこしついざかや　もてなしや　しんじゅくほんてん",
+        "address": "東京都新宿区新宿３-27-5 ケースリービル 5F",
+        "station_name": "新宿",
+        "ktai_coupon": 0,
+        "large_service_area": {
+          "code": "SS10",
+          "name": "関東"
+        },
+        "service_area": {
+          "code": "SA11",
+          "name": "東京"
+        },
+        "large_area": {
+          "code": "Z011",
+          "name": "東京"
+        },
+        "middle_area": {
+          "code": "Y055",
+          "name": "新宿"
+        },
+        "small_area": {
+          "code": "XA00",
+          "name": "新宿東口"
+        },
+        "lat": 35.6912222874,
+        "lng": 139.7017932399,
+        "genre": {
+          "name": "居酒屋",
+          "catch": "新宿 居酒屋 海鮮 和牛 食べ飲み放題 個室",
+          "code": "G001"
+        },
+        "sub_genre": {
+          "name": "和食",
+          "code": "G004"
+        },
+        "budget": {
+          "code": "B002",
+          "name": "2001～3000円",
+          "average": "2980円 全200種『焼き鳥』『肉寿司』『海鮮・寿司』食べ飲み放題"
+        },
+        "catch": "超特価食べ飲み放題2980円 2名～120名様和モダン個室",
+        "capacity": 130,
+        "access": "東京メトロ丸ノ内線，小田急小田原線，京王線，ＪＲ新宿駅Ｍ’出口より徒歩約0分",
+        "mobile_access": "JR新宿駅M'出口より徒歩約0分",
+        "urls": {
+          "pc": "https://www.hotpepper.jp/strJ003625165/?vos=nhppalsa000016"
+        },
+        "photo": {
+          "pc": {
+            "l": "https://imgfp.hotp.jp/IMGH/96/90/P045069690/P045069690_238.jpg",
+            "m": "https://imgfp.hotp.jp/IMGH/96/90/P045069690/P045069690_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/96/90/P045069690/P045069690_58_s.jpg"
+          },
+          "mobile": {
+            "l": "https://imgfp.hotp.jp/IMGH/96/90/P045069690/P045069690_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/96/90/P045069690/P045069690_100.jpg"
+          }
+        },
+        "open": "月～木: 13:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）金、祝前日: 13:00～翌1:00 （料理L.O. 翌0:00 ドリンクL.O. 翌0:30）土: 12:00～翌1:00 （料理L.O. 翌0:00 ドリンクL.O. 翌0:30）日、祝日: 12:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）",
+        "close": "年中無休 !!",
+        "party_capacity": 130,
+        "other_memo": "利酒師がいる/シェフがいる/ワインセラー/TVスポーツ観戦ができる/マイク利用可",
+        "shop_detail_memo": "コース以外のご利用の場合は、お一人様、料理2品＋2ドリンク制になりますので予めご了承下さい！",
+        "budget_memo": "お通し代380円頂戴致します。",
+        "wedding": "新宿個室居酒屋で二次会・ウェディングプラン多数あり！是非当店へ！",
+        "course": "あり",
+        "free_drink": "あり ：【飲み放題ドリンク200種類以上】新宿駅徒歩0分 九州料理×黒毛和牛 完全個室  もてなし屋　新宿本店",
+        "free_food": "あり ：【食べ飲み放題3時間2980円コミコミ価格!50種類の『肉炊きしゃぶしゃぶ』『肉寿司』食べ放題プラン ",
+        "private_room": "あり ：2名様～利用可能な個室席を多数ご用意しております。",
+        "horigotatsu": "なし ：2名様～ご利用可能な個室をご用意しております。",
+        "tatami": "なし ：座敷なし。掘りごたつ個室をご用意しております。",
+        "card": "利用可",
+        "non_smoking": "一部禁煙",
+        "charter": "貸切可 ：80名様～最大130名様(個室・半個室・座敷・ソファー席)",
+        "parking": "あり ：近くにコインパーキングあり",
+        "barrier_free": "なし",
+        "show": "なし",
+        "karaoke": "なし",
+        "band": "不可",
+        "tv": "あり",
+        "lunch": "あり",
+        "midnight": "営業している",
+        "english": "あり",
+        "pet": "不可",
+        "child": "お子様連れ歓迎 ：乳児からOK",
+        "wifi": "あり",
+        "coupon_urls": {
+          "pc": "https://www.hotpepper.jp/strJ003625165/map/?vos=nhppalsa000016",
+          "sp": "https://www.hotpepper.jp/strJ003625165/scoupon/?vos=nhppalsa000016"
+        }
+      },
+      {
+        "id": "J003851761",
+        "name": "焼き鳥の絆 きずな 新宿東口店",
+        "logo_image": "https://imgfp.hotp.jp/IMGH/58/19/P044995819/P044995819_69.jpg",
+        "name_kana": "こしつ　いざかや　きずな　しんじゅく",
+        "address": "東京都新宿区歌舞伎町１‐23-12　第10ＮＫビル4Ｆ",
+        "station_name": "新宿",
+        "ktai_coupon": 0,
+        "large_service_area": {
+          "code": "SS10",
+          "name": "関東"
+        },
+        "service_area": {
+          "code": "SA11",
+          "name": "東京"
+        },
+        "large_area": {
+          "code": "Z011",
+          "name": "東京"
+        },
+        "middle_area": {
+          "code": "Y055",
+          "name": "新宿"
+        },
+        "small_area": {
+          "code": "X150",
+          "name": "歌舞伎町"
+        },
+        "lat": 35.6944413509,
+        "lng": 139.7010851147,
+        "genre": {
+          "name": "居酒屋",
+          "catch": "全席個室居酒屋 焼き鳥 寿司 刺身 食べ放題",
+          "code": "G001"
+        },
+        "sub_genre": {
+          "name": "和食",
+          "code": "G004"
+        },
+        "budget": {
+          "code": "B002",
+          "name": "2001～3000円",
+          "average": "2480円（全席個室居酒屋で焼き鳥 寿司 刺身 食べ放題）"
+        },
+        "catch": "選び抜かれた鮮魚の刺身 焼き鳥が食べ放題！",
+        "capacity": 80,
+        "access": "新宿駅徒歩2分（全席個室居酒屋 焼き鳥食べ放題）",
+        "mobile_access": "新宿駅徒歩2分(全席個室居酒屋 焼き鳥食べ放題)",
+        "urls": {
+          "pc": "https://www.hotpepper.jp/strJ003851761/?vos=nhppalsa000016"
+        },
+        "photo": {
+          "pc": {
+            "l": "https://imgfp.hotp.jp/IMGH/58/21/P044995821/P044995821_238.jpg",
+            "m": "https://imgfp.hotp.jp/IMGH/58/21/P044995821/P044995821_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/58/21/P044995821/P044995821_58_s.jpg"
+          },
+          "mobile": {
+            "l": "https://imgfp.hotp.jp/IMGH/58/21/P044995821/P044995821_168.jpg",
+            "s": "https://imgfp.hotp.jp/IMGH/58/21/P044995821/P044995821_100.jpg"
+          }
+        },
+        "open": "月～日、祝日、祝前日: 12:00～15:00 （料理L.O. 14:00 ドリンクL.O. 14:00）17:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:00）",
+        "close": "無休当店は全席個室を完備している居酒屋です！",
+        "party_capacity": 80,
+        "other_memo": "貸切・パーティーなど気軽にご相談ください♪個室で焼き鳥食べ放題！",
+        "shop_detail_memo": "新宿 個室 居酒屋 肉寿司 焼き鳥 食べ放題 飲み放題 3時間 食べ飲み放題 ランチ 昼飲み 誕生日 おでん",
+        "budget_memo": "キャンセル料：前日30%、当日100%頂戴しております。",
+        "wedding": "新宿 個室 居酒屋 肉寿司 焼き鳥 食べ放題 飲み放題 3時間 食べ飲み放題 ランチ",
+        "course": "あり",
+        "free_drink": "あり ：全席個室居酒屋で焼き鳥 寿司 刺身 食べ放題食べ放題！当店は全席個室を完備している居酒屋です！",
+        "free_food": "あり ：全席個室居酒屋で焼き鳥 寿司 刺身 食べ放題食べ放題！当店は全席個室を完備している居酒屋です！",
+        "private_room": "あり ：当店は全席個室を完備している居酒屋です！",
+        "horigotatsu": "なし ：当店は全席個室を完備している居酒屋です！",
+        "tatami": "なし ：当店は全席個室を完備している居酒屋です！",
+        "card": "利用可",
+        "non_smoking": "禁煙席なし",
+        "charter": "貸切可 ：当店は全席個室を完備している居酒屋です！",
+        "parking": "なし ：お近くにパーキング有",
+        "barrier_free": "あり ：最大80名様♪お気軽に貸切のご相談など承ります◎",
+        "show": "なし",
+        "karaoke": "なし",
+        "band": "不可",
+        "tv": "あり",
+        "lunch": "あり",
+        "midnight": "営業していない",
+        "english": "あり",
+        "pet": "不可",
+        "child": "お子様連れOK ：全席個室居酒屋で焼き鳥 寿司 刺身 食べ放題食べ放題！当店は全席個室を完備している居酒屋です！",
+        "wifi": "あり",
+        "coupon_urls": {
+          "pc": "https://www.hotpepper.jp/strJ003851761/map/?vos=nhppalsa000016",
+          "sp": "https://www.hotpepper.jp/strJ003851761/scoupon/?vos=nhppalsa000016"
+        }
+      }
+    ]
+  }
+}
