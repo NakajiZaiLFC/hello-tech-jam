@@ -20,7 +20,8 @@ import prefCityData from "@/public/pref_city.json";
 
 export default function Home() {
   const [title, setTitle] = useState("");
-  const [prefecture, setPrefecture] = useState("");
+  // デフォルトで沖縄が選択されるように "47" を初期値に設定（沖縄のコードと仮定）
+  const [prefecture, setPrefecture] = useState("47");
   const [city, setCity] = useState("");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [selectedTime, setSelectedTime] = useState(""); // 新しく時間を管理
@@ -66,24 +67,23 @@ export default function Home() {
   const queryTitle = title.trim() ? title : "";
   const queryArea = city.trim() ? city : "";
 
-  // ひらがな、カタカナ、漢字、英語（大文字・小文字）、および空白を許可する正規表現
-  const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z0-9\s]+$/;
+  // ひらがな、カタカナ、漢字、英語（大文字・小文字）、および全角数字と空白を許可する正規表現
+  const allowedRegex = /^[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFFa-zA-Z\uFF10-\uFF19\s]+$/;
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value.length >= 500) {
-      alert("20文字以上の入力は許可されません");
+      alert("500文字以上の入力は許可されません");
       return;
     }
     if (value === "" || allowedRegex.test(value)) {
       setTitle(value);
     } else {
-      alert("ひらがな、カタカナ、漢字、英語以外の文字は使用できません");
+      alert("ひらがな、カタカナ、漢字、英語、全角数字以外の文字は使用できません");
     }
   };
 
   return (
-    
     <div className="flex flex-col items-center justify-center min-h-screen bg-stone-50 text-stone-950 px-4">
       <div className="w-full max-w-md space-y-4">
         {/* 余白を削減: mt-20 → mt-8 または不要なら削除 */}
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col space-y-4">
-            {/* 都道府県のセレクト */}
+            {/* 開催時間 */}
             <div>
               <label className="block text-sm font-semibold mb-2">開催時間</label>
               <Input 
@@ -114,6 +114,7 @@ export default function Home() {
                 onChange={(e) => setSelectedTime(e.target.value)} 
               />
             </div>
+            {/* 都道府県 */}
             <div>
               <label className="block text-sm font-semibold mb-1">都道府県</label>
               <Select
@@ -137,7 +138,7 @@ export default function Home() {
               </Select>
             </div>
 
-            {/* 市町村のセレクト */}
+            {/* 市町村 */}
             <div>
               <label className="block text-sm font-semibold mb-1">市町村</label>
               <Select value={city} onValueChange={setCity}>
@@ -166,9 +167,11 @@ export default function Home() {
                 area: queryArea,
               },
             }}
-            className={isDisabled ? "pointer-events-none" : ""}
+            className={isDisabled ? "pointer-events-none w-full" : "w-full"}
           >
-            <Button disabled={isDisabled}>次へ</Button>
+            <Button disabled={isDisabled} className="w-full">
+              次へ
+            </Button>
           </Link>
         </div>
       </div>
